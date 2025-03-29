@@ -64,6 +64,10 @@ const handleSubmit = () => {
   navigation.navigate('Dashboard')
 }
 
+const handleRegister = () => {
+   navigation.navigate('Register')
+}
+
   return (
      <View style={styles.container}>
 
@@ -79,6 +83,10 @@ const handleSubmit = () => {
 
         <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
           <Text style={styles.btnText}>Login</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={handleRegister}>
+         <Text style={{color:'blue'}}>Register</Text>
         </TouchableOpacity>
      </View>
   )

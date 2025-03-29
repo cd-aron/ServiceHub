@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const MessageCard = () => {
+const MessageCard = ({data}) => {
   return (
     <View style={styles.msgCard}>
             
@@ -10,13 +10,13 @@ const MessageCard = () => {
     </View>
 
     <View style={styles.mMid}>
-       <Text style={styles.mUser}>John Doe</Text>
-       <Text style={styles.mMsg}>Greetings from John Doe!</Text>
+       <Text style={styles.mUser}>{data.username}</Text>
+       <Text style={styles.mMsg}>{data.message}</Text>
     </View>
 
     <View style={styles.mRight}> 
-        <Text style={styles.mTime}>5h ago</Text>
-        <Text style={styles.mTimes}>1</Text>
+        <Text style={styles.mTime}>{data.time}</Text>
+        <Text style={styles.mTimes}>{data.times}</Text>
     </View>
 
     </View>
@@ -27,15 +27,17 @@ export default MessageCard
 
 const styles = StyleSheet.create({
     msgCard:{
+        overflow:'hidden',
         flexDirection:'row',
-        justifyContent:'space-evenly',
-        marginVertical:5,
+        marginVertical:6,
+        marginLeft:23,
         borderBottomWidth:0.3,
         borderBottomColor:'grey',
         paddingBottom:8,
+
      },
      mLeft:{
-       
+      
      },
      mImg:{
        backgroundColor:'black',
@@ -44,7 +46,9 @@ const styles = StyleSheet.create({
        borderRadius:100
      },
      mMid:{
- 
+        
+         width:150,
+         margin:'auto'
      },
      mUser:{ 
         color:'black',
@@ -57,7 +61,9 @@ const styles = StyleSheet.create({
          fontSize:13
      },
      mRight:{
-    
+
+         width:60,
+         marginLeft:'auto'
      },
      mTime:{
         color:'grey',

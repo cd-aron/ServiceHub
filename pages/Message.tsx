@@ -6,7 +6,42 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import MessageCard from '../components/MessageCard';
 
 const Message = () => {
+
+    const data = [
+        {
+          username: "john_doe",
+          message: "Hello, how are you?",
+          time: "5h ago ",
+          times: 1
+        },
+        {
+          username: "jane_smith",
+          message: "I'm doing great!",
+          time: "3h ago",
+          times: 2
+        },
+        {
+          username: "michael_lee",
+          message: "Anyone up for a coffee break?",
+          time: "1h ago",
+          times: 3
+        },
+        {
+          username: "sarah_jones",
+          message: "Just finished a meeting, need some rest.",
+          time: "5h ago ",
+          times: 4
+        },
+        {
+          username: "david_wilson",
+          message: "Let's catch up later in the afternoon!",
+          time: "5h ago",
+          times: 5
+        }
+      ];
+
   return (
+
     <View style={styles.container}>
 
         <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
@@ -22,10 +57,11 @@ const Message = () => {
         </View>
 
         <View style={styles.body}>
-            <MessageCard/>
-            <MessageCard/>
-            <MessageCard/>
-            <MessageCard/>           
+            {
+                data.map((item,index) => {
+                    return <MessageCard key={index} data={item}/>
+                })
+            }       
         </View>
 
       <View style={styles.footer}>
@@ -76,7 +112,8 @@ const styles = StyleSheet.create({
       },
 
     body:{
-        marginVertical:17
+        marginVertical:17,
+        
     },
 
     footer: {

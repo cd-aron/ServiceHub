@@ -17,13 +17,17 @@ const NavBar = () => {
         navigation.navigate('Message')
     }
 
+    const handleProfile = () => {
+       navigation.navigate('Profile')
+    }
+
   return (
     <View style={styles.navBarContainer}>
              <TouchableOpacity onPress={handleDashboard}><FontAwesomeIcon icon={faHouse} size={20} /></TouchableOpacity>
             <TouchableOpacity onPress={handleMessage}><FontAwesomeIcon icon={faMessage} size={20} /></TouchableOpacity>
             <FontAwesomeIcon icon={faPlus} size={20} />
             <FontAwesomeIcon icon={faCartShopping} size={20} />
-            <FontAwesomeIcon icon={faUser } size={20} />
+            <TouchableOpacity onPress={handleProfile}><FontAwesomeIcon icon={faUser} size={20} /></TouchableOpacity>
     </View>
   )
 }
